@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Creation de compte{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Creation de Compte Utilisateur</h1>
+    <div class="form-group">
+    
+    {{ form_start(registrationForm) }}
+    <div class="row p-5" >
+    <div class="col"> 
+    </div>   
+        <div class="col">
+        <fieldset> 
+            <legend>Mon identité</legend>
+            <p>
+            {{ form_row(registrationForm.prenom) }}
+            </p>
+            <p>
+            {{ form_row(registrationForm.nom) }}
+            </p>
+            <p>
+            {{ form_row(registrationForm.pseudo) }}
+            </p>
+            <p>
+            {{ form_row(registrationForm.tel) }}
+            </p>
+        </fieldset>
+        </div>
+        <div class="col">
+        <fieldset> 
+            <legend>Mes identifiants de connexion</legend>
+            <p>
+            {{ form_row(registrationForm.email) }}
+            </p>
+            <p>
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'
+            }) }}
+            </p>
+            <p>
+            {{ form_row(registrationForm.RGPD) }}
+            </p>
+        </fieldset>
+        </div>
+        <div class="col">
+        </div> 
+        </div>
+        <div class="row m-5" >
+        <button type="submit" class="btn btn-primary m-3">M'enregistrer</button>
+        </div>
+    {{ form_end(registrationForm) }}
+    
+{% endblock %}
